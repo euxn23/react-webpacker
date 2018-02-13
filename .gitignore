@@ -1,0 +1,5 @@
+vendor/bundle
+.bundle
+node_modules
+test/__build__
+
