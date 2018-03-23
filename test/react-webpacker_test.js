@@ -28,7 +28,7 @@ const html = `
 <body>
 ${renderComponentHtml}
 ${useComponentsHtml}
-<script src="/packs/react-webpacker.js"></script>
+<script src="/packs/react-webpacker.js" defer="defer"></script>
 </body>
 </html>
 `

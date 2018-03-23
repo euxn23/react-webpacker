@@ -12,13 +12,13 @@ class ReactWebpackerTest < ActionView::TestCase
 
   def test_use_components
     pack_tag_stub = Proc.new do |arg|
-      "<script src=\"/packs/#{arg}.js\"></script>"
+      "<script src=\"/packs/#{arg}.js\" defer=\"defer\"></script>"
     end
     File.open 'test/use-components_expected.html' do |f|
       stub('javascript_pack_tag', pack_tag_stub) do
         components = ['components/MyComponent']
         expect_tags = f.read.chomp
-        assert_equal expect_tags, use_components(components)
+        assert_equal expect_tags, use_components(components, defer: true)
       end
     end
   end
