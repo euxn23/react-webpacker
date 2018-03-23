@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.version = ReactWebpacker::VERSION
   s.authors = ['euxn23']
   s.email = 'euxn23@gmail.com'
-  s.homepage = 'https://github.com/euxn23/webpacker-react'
+  s.homepage = 'https://github.com/euxn23/react-webpacker'
   s.summary = 'The smallest, enoughly-tested library for react with webpacker.'
   s.license = 'MIT'
   s.required_ruby_version = '>= 2.3.0'
