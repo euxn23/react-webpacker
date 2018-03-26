@@ -1,9 +1,10 @@
 {
   "name": "react-webpacker",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "The smallest, enoughly-tested library for react with webpacker.",
-  "main": "src/react-webpacker.js",
+  "main": "dist/react-webpacker.js",
   "scripts": {
+    "build": "babel src --out-dir dist",
     "fmt": "prettier --write \"{src,test}/**/*.js{,x}\"",
     "lint": "eslint \"{src,test}/**/*.js{,x}\"",
     "test": "jest test/react-webpacker_test.js"
@@ -12,6 +13,7 @@
   "license": "MIT",
   "devDependencies": {
     "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-loader": "^7.1.2",
