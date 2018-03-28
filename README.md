@@ -11,7 +11,7 @@ React-Webpacker is the smallest, enoughly-tested library for react with webpacke
 ## Usage
 - Add component to `window` scope.
 ```js
-window.YourCoolComponent = YourCoolComponent
+Object.assign(window, { YourCoolComponent })
 ```
 
 - Create JavaScript file to render components into webpacker target directory.
@@ -25,11 +25,11 @@ ReactWebpacker.render()
     - From Ruby to JS, `snake_case` in props will be transformed to `camelCase` **AUTOMATICALLY**.
     - `react-webpacker` script should be called **ONCE** per rendered html page, **DON'T** call in looped views.
     - DOM is rendered in order from the top, so you should call `react-webpacker` script after `use_components` and `render_component`
-```slim
-= use_components(['path/to/YourCoolComponent'])
-= render_component('YourCoolComponent', {props_object: :value})
+```erb
+<%= use_components(['path/to/YourCoolComponent']) %>
+<%= render_component('YourCoolComponent', {props_key: :value}) %>
 
-= javascript_pack_tag 'react-webpacker'
+<%= javascript_pack_tag 'react-webpacker' %>
 ```
 
 ## Compared with `React-Rails` and `React on Rails`
