@@ -27,7 +27,7 @@ ReactWebpacker.render()
     - DOM is rendered in order from the top, so you should call `react-webpacker` script after `use_components` and `render_component`
 ```erb
 <%= use_components(['path/to/YourCoolComponent']) %>
-<%= render_component('YourCoolComponent', {props_object: :value}) %>
+<%= render_component('YourCoolComponent', {props_key: :value}) %>
 
 <%= javascript_pack_tag 'react-webpacker' %>
 ```
