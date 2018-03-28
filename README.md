@@ -11,7 +11,7 @@ React-Webpacker is the smallest, enoughly-tested library for react with webpacke
 ## Usage
 - Add component to `window` scope.
 ```js
-window.YourCoolComponent = YourCoolComponent
+Object.assign(window, { YourCoolComponent })
 ```
 
 - Create JavaScript file to render components into webpacker target directory.
