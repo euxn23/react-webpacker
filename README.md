@@ -9,6 +9,13 @@ React-Webpacker is the smallest, enoughly-tested library for react with webpacke
 - **NOT Provide** Server-Side Rendering.
 
 ## Usage
+
+### Notes
+- From Ruby to JS, `snake_case` in props will be transformed to `camelCase` **AUTOMATICALLY**.
+- `react-webpacker` script should be called **ONCE** per rendered html page, **DON'T** call in looped views.
+- DOM is rendered in order from the top, so you should call `ReactWebpacker#render()` with `defer` attribute.
+    - or call after `use_components` and `render_component`
+
 - Add component to `window` scope.
 ```js
 Object.assign(window, { YourCoolComponent })
