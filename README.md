@@ -9,28 +9,61 @@ React-Webpacker is the smallest, enoughly-tested library for react with webpacke
 - **NOT Provide** Server-Side Rendering.
 
 ## Usage
-- Add component to `window` scope.
+
+### Notes
+- From Ruby to JS, `snake_case` in props will be transformed to `camelCase` **AUTOMATICALLY**.
+- `react-webpacker` script should be called **ONCE** per rendered html page, **DON'T** call in looped views.
+
+### ES Modules Way Usage
+
+your-view.js
 ```js
-window.YourCoolComponent = YourCoolComponent
+import ReactWebpacker from 'react-webpacker'
+import YourCoolComponent from 'path/to/YourCoolComponent'
+
+const components = {
+  YourCoolComponent
+}
+
+ReactWebpacker.render(components)
 ```
 
-- Create JavaScript file to render components into webpacker target directory.
-```js:react-webpacker.js
+your-view.html.erb
+```erb
+<%= javascript_pack_tag 'your-view', defer: true %>
+
+<%= render_component('YourCoolComponent', {props_key: :value}) %>
+```
+
+### or Easy Usage
+
+YourCoolComponent.js
+```js
+// Add component to `window` scope.
+Object.assign(window, { YourCoolComponent })
+```
+
+react-webpacker.js
+```js
 import ReactWebpacker from 'react-webpacker'
 
 ReactWebpacker.render()
 ```
 
-- Add View Helper and JavaScript tag.
-    - From Ruby to JS, `snake_case` in props will be transformed to `camelCase` **AUTOMATICALLY**.
-    - `react-webpacker` script should be called **ONCE** per rendered html page, **DON'T** call in looped views.
-    - DOM is rendered in order from the top, so you should call `react-webpacker` script after `use_components` and `render_component`
-```slim
-= use_components(['path/to/YourCoolComponent'])
-= render_component('YourCoolComponent', {props_object: :value})
+your-view.html.erb
+```erb
+<%= use_components ['path/to/YourCoolComponent'], defer: true %>
+<%= javascript_pack_tag 'react-webpacker', defer: true %>
 
-= javascript_pack_tag 'react-webpacker'
+<%= render_component('YourCoolComponent', {props_key: :value}) %>
+
 ```
+
+#### Notes
+- DOM is rendered in order from the top, so you should call `ReactWebpacker#render()` with `defer` attribute.
+    - or after `render_component`
+- You should call `ReactWebpacker#render()` after `use_components`, even if using `defer`.
+
 
 ## Compared with `React-Rails` and `React on Rails`
 - They provide JavaScript library to load **ALL COMPONENTS**, too heavy and harmful for browser performance.

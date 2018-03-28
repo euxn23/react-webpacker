@@ -2,11 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 export default {
-  render() {
+  render(components = window) {
     Array.from(document.querySelectorAll('div[data-component-name]')).forEach(
       dom => {
         const componentName = dom.getAttribute('data-component-name')
-        const component = window[componentName]
+        const component = components[componentName]
         if (!component)
           return console.error(
             `Component ${componentName} is not defined in window scope`
