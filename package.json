@@ -12,6 +12,13 @@
   },
   "author": "euxn23",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "webpack",
+    "webpacker",
+    "ruby",
+    "rails"
+  ],
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
