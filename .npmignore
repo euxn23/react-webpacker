@@ -1,1 +1,6 @@
-!dist
+vendor/bundle
+.bundle
+node_modules
+test/__build__
+
+*.gem
