@@ -1,17 +1,24 @@
 {
   "name": "react-webpacker",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "The smallest, enoughly-tested library for react with webpacker.",
   "main": "dist/react-webpacker.js",
   "scripts": {
     "build": "babel src --out-dir dist",
     "fmt": "prettier --write \"{src,test}/**/*.js{,x}\"",
     "lint": "eslint \"{src,test}/**/*.js{,x}\"",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "test": "jest test/react-webpacker_test.js"
   },
   "author": "euxn23",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "webpack",
+    "webpacker",
+    "ruby",
+    "rails"
+  ],
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
