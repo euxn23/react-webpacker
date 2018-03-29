@@ -9,7 +9,7 @@ export default {
         const component = components[componentName]
         if (!component)
           return console.error(
-            `Component ${componentName} is not defined in window scope`
+            `Component ${componentName} is not defined`
           )
         ReactDOM.render(
           React.createElement(
