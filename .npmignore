@@ -1,0 +1,7 @@
+vendor/bundle
+.bundle
+node_modules
+test/__build__
+
+*.gem
+yarn-error.log
