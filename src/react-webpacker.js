@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 export default {
   render(components = window) {
-    Array.from(document.querySelectorAll('div[data-component-name]')).forEach(
+    [...document.querySelectorAll('div[data-component-name]')].forEach(
       dom => {
         const componentName = dom.getAttribute('data-component-name')
         const component = components[componentName]
