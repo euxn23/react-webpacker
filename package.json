@@ -1,6 +1,6 @@
 {
   "name": "react-webpacker",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "The smallest, enoughly-tested library for react with webpacker.",
   "main": "dist/react-webpacker.js",
   "module": "src/react-webpacker.js",
