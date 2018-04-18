@@ -1,11 +1,11 @@
 {
   "name": "react-webpacker",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "The smallest, enoughly-tested library for react with webpacker.",
   "main": "dist/react-webpacker.js",
   "module": "src/react-webpacker.js",
   "scripts": {
-    "build": "babel src --out-dir dist",
+    "build": "babel src --source-maps --presets env,react --out-dir dist",
     "fmt": "prettier --write \"{src,test}/**/*.js{,x}\"",
     "lint": "eslint \"{src,test}/**/*.js{,x}\"",
     "prepublishOnly": "npm run build",
