@@ -8,7 +8,7 @@
     "build": "babel src --source-maps --out-dir dist",
     "fmt": "prettier --write \"{src,test}/**/*.js{,x}\"",
     "lint": "eslint \"{src,test}/**/*.js{,x}\"",
-    "prepublishOnly": "npm run build",
+    "prepare": "npm run build",
     "test": "jest test/react-webpacker.test.js"
   },
   "author": "euxn23",
