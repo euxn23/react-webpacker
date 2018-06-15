@@ -1,9 +1,10 @@
 {
   "name": "react-webpacker",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "The smallest, enoughly-tested library for react with webpacker.",
   "main": "dist/react-webpacker.js",
   "module": "src/react-webpacker.js",
+  "types": "src/react-webpacker.d.ts",
   "scripts": {
     "build": "babel src --source-maps --out-dir dist",
     "fmt": "prettier --write \"{src,test}/**/*.js{,x}\"",
