@@ -9,7 +9,7 @@
     "fmt": "prettier --write \"{src,test}/**/*.js{,x}\"",
     "lint": "eslint \"{src,test}/**/*.js{,x}\"",
     "prepublishOnly": "npm run build",
-    "test": "jest test/react-webpacker_test.js"
+    "test": "jest test/react-webpacker.test.js"
   },
   "author": "euxn23",
   "license": "MIT",
