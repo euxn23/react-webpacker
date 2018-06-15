@@ -6,16 +6,17 @@ export function render(components = window) {
     dom => {
       const componentName = dom.getAttribute('data-component-name')
       if (!componentName)
-        return console.error(`Component name is not defined in target DOM`)
+        return console.error('Component name is not defined in target DOM')
       const component = components[componentName]
       if (!component)
-        ReactDOM.render(
-          React.createElement(
-            component,
-            JSON.parse(dom.getAttribute('data-props') || '{}')
-          ),
-          dom
-        )
+        return console.error(`Component ${componentName} is not defined`)
+      ReactDOM.render(
+        React.createElement(
+          component,
+          JSON.parse(dom.getAttribute('data-props') || '{}')
+        ),
+        dom
+      )
     }
   )
 }

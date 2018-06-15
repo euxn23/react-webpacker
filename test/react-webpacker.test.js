@@ -28,7 +28,7 @@ const html = `
 <body>
 ${renderComponentHtml}
 ${useComponentsHtml}
-<script src="/packs/react-webpacker.js"></script>
+<script src="/packs/react-webpacker.js" defer="defer"></script>
 </body>
 </html>
 `
@@ -40,6 +40,8 @@ app.use(express.static(path.resolve(__dirname, '__build__')))
 let browser
 let page
 let server
+
+jest.setTimeout(10000)
 
 beforeAll(async () => {
   server = await app.listen(8888)
