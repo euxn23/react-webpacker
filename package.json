@@ -1,15 +1,15 @@
 {
   "name": "react-webpacker",
-  "version": "1.4.3",
+  "version": "1.5.0",
   "description": "The smallest, enoughly-tested library for react with webpacker.",
   "main": "dist/react-webpacker.js",
   "module": "src/react-webpacker.js",
   "scripts": {
-    "build": "babel src --source-maps --presets env,react --out-dir dist",
+    "build": "babel src --source-maps --out-dir dist",
     "fmt": "prettier --write \"{src,test}/**/*.js{,x}\"",
     "lint": "eslint \"{src,test}/**/*.js{,x}\"",
-    "prepublishOnly": "npm run build",
-    "test": "jest test/react-webpacker_test.js"
+    "prepare": "npm run build",
+    "test": "jest test/react-webpacker.test.js"
   },
   "author": "euxn23",
   "license": "MIT",
@@ -21,6 +21,8 @@
     "rails"
   ],
   "devDependencies": {
+    "@types/react": "^16.3.17",
+    "@types/react-dom": "^16.0.6",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -45,6 +47,7 @@
     "puppeteer": "^1.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "typescript": "^2.9.2",
     "webpack": "^3.11.0"
   }
 }

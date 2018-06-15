@@ -41,6 +41,8 @@ let browser
 let page
 let server
 
+jest.setTimeout(10000)
+
 beforeAll(async () => {
   server = await app.listen(8888)
   browser = await puppeteer.launch({ headless: true })
