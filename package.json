@@ -1,6 +1,6 @@
 {
   "name": "react-webpacker",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "The smallest, enoughly-tested library for react with webpacker.",
   "main": "dist/react-webpacker.js",
   "module": "src/react-webpacker.js",
@@ -8,7 +8,7 @@
   "scripts": {
     "build": "babel src --source-maps --out-dir dist",
     "fmt": "prettier --write \"{src,test}/**/*.js{,x}\"",
-    "lint": "eslint \"{src,test}/**/*.js{,x}\"",
+    "lint": "eslint \"{src,test}/**/*.js{,x}\" && tslint \"src/**/*.ts{,x}\"",
     "prepare": "npm run build",
     "test": "jest test/react-webpacker.test.js"
   },
@@ -48,6 +48,8 @@
     "puppeteer": "^1.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "tslint": "^5.10.0",
+    "tslint-config-standard": "^7.0.0",
     "typescript": "^2.9.2",
     "webpack": "^3.11.0"
   }
