@@ -1,6 +1,8 @@
-declare function render(components?: {
-    [key: string]: any;
-}): void;
-declare const ReactWebpacker: {
-    render: typeof render;
-};
+declare module 'react-webpacker' {
+  function render (components?: {
+    [key: string]: any
+  }): void
+  const ReactWebpacker: {
+    render: typeof render
+  }
+}
